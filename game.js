@@ -60,7 +60,7 @@ function nextSequence()
     setTimeout(function() {
         $("#"+randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100)
         playSound(randomChosenColour)
-    },1000)
+    },500)
     
 }
 
