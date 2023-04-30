@@ -7,8 +7,11 @@ var level = 0
 
 $(document).keypress(function(){
     if(!started) {
-        $("#level-title").text("Level " +level)
-        nextSequence();
+        $("#level-title").text("Let's Go...")
+        setTimeout(function() {
+            nextSequence();
+        },1000)
+        
         started = true
     }
 })
@@ -28,7 +31,7 @@ function checkAnswer(currentLevel) {
         if (gamePattern.length === userClickedPattern.length){
             setTimeout(function() {
                 nextSequence()
-            }, 1000)
+            }, 500)
         }
     }
     else{
@@ -54,9 +57,10 @@ function nextSequence()
     randomChosenColour = buttonColours[randomNumber]
     gamePattern.push(randomChosenColour)
 
-    $("#"+randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100)
-
-    playSound(randomChosenColour)
+    setTimeout(function() {
+        $("#"+randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100)
+        playSound(randomChosenColour)
+    },1000)
     
 }
 
@@ -80,6 +84,11 @@ function startOver() {
     
       
 }
+
+
+
+
+
 
 
 
